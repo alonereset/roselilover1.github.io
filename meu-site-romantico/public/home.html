@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Para Você ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio autoplay loop>
+    <source src="musica/musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="tela" id="tela1">
+    <h1>Oi, meu amor 💖</h1>
+    <p>Preparei isso com carinho...</p>
+    <button onclick="proximaTela()">Começar ✨</button>
+</div>
+
+<div class="tela" id="tela2">
+    <h2>Nossas lembranças 💕</h2>
+    <img id="fotoSlide" src="fotos/foto1.jpg" class="foto">
+    <button onclick="proximaTela()">Continuar ➜</button>
+</div>
+
+<div class="tela" id="tela3">
+    <h2>Responda com carinho 💙</h2>
+
+    <form id="formRespostas">
+        <div id="perguntasContainer"></div>
+
+        <button type="submit">Enviar ❤️</button>
+    </form>
+</div>
+
+
+
+<div class="tela" id="tela4">
+    <h1>Obrigado 💖</h1>
+    <p>Suas respostas foram enviadas 🥺</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

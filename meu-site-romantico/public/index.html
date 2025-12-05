@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login 💙</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>Antes de entrar... 💖</h1>
+
+    <div class="input-group">
+        <label>Inicial da pessoa que me mudou 💙</label>
+        <input id="loginUser" type="text" placeholder="Ex: M">
+    </div>
+
+    <div class="input-group">
+        <label>Data do nosso início 💗 (DD/MM/AAAA)</label>
+        <input id="loginPass" type="text" placeholder="DD/MM/AAAA">
+    </div>
+
+    <button onclick="login()">Entrar</button>
+    <p id="msgErro" class="msg-erro"></p>
+  </div>
+
+
+    <script>
+    async function login() {
+        const user = document.getElementById("loginUser").value;
+        const pass = document.getElementById("loginPass").value;
+
+        const res = await fetch("/validar-login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ user, pass })
+        });
+
+        const data = await res.json();
+        if (data.ok) window.location.href = "home.html";
+        else document.getElementById("msgErro").innerText = "Incorreto 💔";
+    }
+    </script>
+</body>
+</html>
